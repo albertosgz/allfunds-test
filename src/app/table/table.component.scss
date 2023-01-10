@@ -1,0 +1,34 @@
+table {
+  width: 100%;
+  margin: 15px 0;
+  thead {
+    th {
+      padding: 0 10px;
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1px solid black;
+    }
+  }
+  tbody {
+    tr {
+      display: flex;
+      width: 100%;
+      padding: 3px 0;
+      border-bottom: 1px solid black;
+      td {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        &:first-child {
+          padding-left: 10px;
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+
+.justify-right {
+  display: flex;
+  justify-content: flex-end;
+}

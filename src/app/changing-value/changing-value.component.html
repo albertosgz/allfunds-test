@@ -1,0 +1,4 @@
+<span [ngClass]="{ 'positive': positive, 'negative': negative }">
+  {{ symbol }}<ng-container *ngIf="perc; else elseTemplate">{{ value | percent }}</ng-container>
+  <ng-template #elseTemplate>{{ value }}</ng-template>
+</span>

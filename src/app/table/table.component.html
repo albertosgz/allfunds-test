@@ -1,0 +1,82 @@
+<h1>
+  Market data
+</h1>
+<table role="table">
+  <thead role="rowgroup">
+
+    <tr role="row">
+      <th role="columnheader">Key data</th>
+    </tr>
+
+  </thead>
+  <tbody role="rowgroup">
+
+    <tr role="row">
+      <td role="cell">
+        <span>Last</span>
+        <span>Close</span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">{{ data.Last.v }}</span>
+        <span class="justify-right">{{ data.Close.v }}</span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">{{ data.Last.d | date:'HH:mm:ss' }}</span>
+        <span class="justify-right">{{ data.Last.d | date:'MM/dd/YYYY' }}</span>
+      </td>
+    </tr>
+
+    <tr role="row">
+      <td role="cell">
+        <span>Day Change %</span>
+        <span>Day Change</span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">
+          <app-changing-value [value]="data.DayChangePerc.v"  [perc]="true"></app-changing-value>
+        </span>
+        <span class="justify-right">
+          <app-changing-value [value]="data.DayChange.v"></app-changing-value>
+        </span>
+      </td>
+      <td role="cell">
+        <span></span>
+        <span></span>
+      </td>
+    </tr>
+
+    <tr role="row">
+      <td role="cell">
+        <span>Volume</span>
+        <span>Turnover</span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">{{ (data.Volume.v || 0) / 1000000 | number }}M</span>
+        <span class="justify-right">{{ (data.Turnover.v || 0) / 1000000 | number }}M</span>
+      </td>
+      <td role="cell">
+        <span></span>
+        <span></span>
+      </td>
+    </tr>
+
+    <tr role="row">
+      <td role="cell">
+        <span>Previous Year Close</span>
+        <span>YTD %</span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">{{ data.PreviousYearClose.v }}</span>
+        <span class="justify-right">
+          <app-changing-value [value]="data.YTD.v" [perc]="true"></app-changing-value>
+        </span>
+      </td>
+      <td role="cell">
+        <span class="justify-right">{{ data.PreviousYearClose.d | date:'MM/dd/YYYY' }}</span>
+        <span></span>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
